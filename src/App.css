@@ -1,0 +1,83 @@
+.Body {
+  background-image: url('./img/backGround.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* General 3D transition */
+.rotate-3d-transition {
+  transition: transform 1s ease, opacity 0.9s ease-in-out; /* Smooth transition */
+  transform-style: preserve-3d;  /* Preserve 3D space for depth */
+  perspective: 1000px;  /* Perspective for depth, you can adjust this */
+}
+
+/* 3D vertical rotation with upward movement */
+.rotate-3d-up {
+  transform: translateY(-100px) rotateX(30deg); /* Move up and rotate along the X-axis */
+  opacity: 1;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+@keyframes fadeInRotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-60deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fadeOutRotate {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(60deg);
+  }
+}
+
+.fade-in {
+  animation: fadeInRotate 0.8s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOutRotate 0.8s ease-in-out forwards;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) translateY(0); /* Start from bottom with some rotation */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg); /* Move to the final position with no rotation */
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s ease-in-out forwards;
+}
+
+@keyframes fade-down-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fade-down-out {
+  animation: fade-down-out 0.9s ease-in-out forwards;
+}
